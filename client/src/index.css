@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container1{
+	width: 80%;
+	margin: auto;
+	
+}
+
+
+.home{
+	background-color: rgba(0, 0, 0, 0.496);
+	position: relative;
+  }
+  .home-p{
+  position: absolute;
+  top:12;
+  /* margin-top: 34rem; */
+  
+  }
+@media (min-width: 576px) {
+	.navbar-table{
+		display: none;
+	}
+
+
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+
+
+.main{
+  width: 100%;
+  margin: 0 auto;
+} 
+h1{
+	font-family: 'Ultra', serif;
+}
+
+
+.carusel-home{
+  height: 50vh;
+  object-fit: cover;
+  background-size: cover;
+ 
+}
+

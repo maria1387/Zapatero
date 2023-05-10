@@ -1,0 +1,131 @@
+.section-cart {
+  margin-top: 100px;
+}
+.section-cart__container {
+  /* border: 2px solid rgb(214, 192, 192); */
+  background: rgb(241, 239, 239);
+  width: 90%;
+  height: 60%;
+  margin: auto;
+}
+.cart {
+  width: 80%;
+  height: 60%;
+  margin: auto;
+}
+
+.cartContainer {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  align-items: center;
+  border: 1px solid gainsboro;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.img-cart {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover;
+}
+.cart-left {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.cart-name {
+  margin-left: 30px;
+}
+.cart-right__p {
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+.cart-right {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.cart-right-btn {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  margin-right: 20px;
+}
+.cart-right-btn p {
+  margin-bottom: 0px;
+}
+.cart-h2 {
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.buttonPrice {
+  margin-bottom: 30px;
+}
+.nav__icons .icon {
+  color: #fff;
+}
+@media only screen and (max-width: 768px) {
+  .section-cart {
+    margin-top: 50px;
+  }
+  .cartContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gainsboro;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  .cart-left {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-cart {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover;
+  }
+
+  .cart-name h4 {
+    margin-top: 20px;
+  }
+
+  .cart-right {
+    display: inline;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .cart-h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .cart p {
+    text-align: center;
+  }
+  .cart {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .section-cart__container {
+    background: none;
+    width: 100%;
+    border: none;
+  }
+  .cart-right-btn {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+  .cart-right__p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
