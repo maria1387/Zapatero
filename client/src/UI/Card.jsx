@@ -87,6 +87,10 @@ const Card = ({item}) => {
               5.0
             </span>
           </div>
+<<<<<<< HEAD
+=======
+          <p>{item.destacado}</p>
+>>>>>>> db0443a396991cf5b2fd4e765b866fc5d8077bca
             <Button type="submit" className="" textButton='ver más' onClick={() => navigate(`/zapatero/${item.id}`)} />
             
           <div className="flex items-center justify-between">

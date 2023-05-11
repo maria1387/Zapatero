@@ -15,7 +15,10 @@ import NotFound from "../pages/NotFound";
 import ZapateroDetails from "../pages/ZapateroDetails";
 import FormZapatero from "../components/FormZapatero";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> db0443a396991cf5b2fd4e765b866fc5d8077bca
 import Productos from "../pages/Productos";
 const Routers = () => {
   const PrivateRoutes = () => {
