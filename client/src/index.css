@@ -10,16 +10,16 @@
 }
 
 
-.home{
+/* .home{
 	background-color: rgba(0, 0, 0, 0.496);
 	position: relative;
   }
   .home-p{
   position: absolute;
   top:12;
-  /* margin-top: 34rem; */
+
   
-  }
+  } */
 @media (min-width: 576px) {
 	.navbar-table{
 		display: none;

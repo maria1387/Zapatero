@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 import  Swal from "sweetalert2"
 
 /* eslint-disable react/prop-types */
-const Table = () => {
+const Table = ({search}) => {
   const navigate = useNavigate();
   const { ZapateroData, setZapateroData } = useContext(ZapateroContext);
 
@@ -57,6 +57,9 @@ const Table = () => {
   };
   
 
+       //metodo de filtrado 2   
+       const results = !search ? ZapateroData : ZapateroData.filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-3 ">
@@ -84,7 +87,7 @@ const Table = () => {
             </tr>
           </thead>
           <tbody>
-            {ZapateroData?.map((item, index) => (
+            {results?.map((item, index) => (
               <tr
                 key={index}
                 className="bg-gray-300 border-blue-400 hover:bg-gray-500"
