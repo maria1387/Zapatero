@@ -8,7 +8,8 @@ CREATE TABLE users(
   created_at date default current_date
 );
 SELECT * FROM users;
-
+ INSERT INTO users(email , password)
+VALUES('paula@gmailcom', '123456');
 
 CREATE TABLE inventory(
 	id SERIAL PRIMARY KEY,

@@ -1,12 +1,13 @@
-import { useContext } from "react";
-import { ZapateroContext } from "../context/ZapateroProvider";
+/* eslint-disable react/prop-types */
+
 import Card from "./Card";
 
-const ListCard = () => {
-  const { ZapateroData } = useContext(ZapateroContext);
+const ListCard = ({data}) => {
+  // const { ZapateroData } = useContext(ZapateroContext);
+  // console.log(ZapateroData)
   return (
     <>
-      {ZapateroData?.map((item, index) => (
+      {data?.map((item, index) => (
         <Card item={item} key={index} />
       ))}
     </>
