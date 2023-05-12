@@ -1,12 +1,12 @@
 // import Footer from "../components/Footer";
 
-import Navbar from "../components/Navbar";
+import Navigation from "../components/Navigation";
 import Routes from "../routes/Routes";
 
 const Layout = () => {
   return (
     <>
-      <Navbar />
+         <Navigation />
       <div>
         <Routes />
       </div>

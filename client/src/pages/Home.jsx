@@ -1,8 +1,8 @@
 import Carusel from "../components/Carusel";
-import TimerCount from "../UI/TimerCount";
+import TimerCount from "../components/UI/TimerCount";
 import Helmet from "../components/Helmet/Helmet";
 import "../App.css";
-import ListCard from "../UI/ListCard";
+import ListCard from "../components/UI/ListCard";
 import Footer from "../components/Footer";
 import { useContext, useEffect, useState } from "react";
 import { ZapateroContext } from "../context/ZapateroProvider";
@@ -16,6 +16,7 @@ const Home = () => {
     );
 
     setDestacadoProducts(filterDestacadoProducts);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

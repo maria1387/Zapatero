@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 import Clock from "./Clock";
-import imagen from "../assets/img/imagen5.jpg";
+import imagen from "../../assets/img/imagen5.jpg";
 
 const TimerCount = () => {
   return (

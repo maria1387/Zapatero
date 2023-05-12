@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 
 import { useContext } from "react";
-import Button from "../components/Button";
+import Button from "../Button";
 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { ZapateroContext } from "../context/ZapateroProvider";
-import { formatPrice } from "../components/format-price";
+import { ZapateroContext } from "../../context/ZapateroProvider";
+import { formatPrice } from "../format-price";
 
 
 
