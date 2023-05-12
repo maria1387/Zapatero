@@ -33,7 +33,7 @@ const FormZapatero = () => {
     if (editing) {
       // console.log('updata')
       const response = await fetch(
-        `http://localhost:8001/inventario/${params.id}`,
+        `http://localhost:8001/productos/${params.id}`,
         {
           method: "PUT",
 
@@ -47,7 +47,7 @@ const FormZapatero = () => {
       const data = await response.json();
       console.log(data);
     } else {
-      await fetch("http://localhost:8001/inventario", {
+      await fetch("http://localhost:8001/productos", {
         method: "POST",
         body: JSON.stringify(inventory),
         headers: {
@@ -66,7 +66,7 @@ const FormZapatero = () => {
 
   //para traer una tarea al edit
   const loadTask = async (id) => {
-    const res = await fetch(`http://localhost:8001/inventario/${id}`);
+    const res = await fetch(`http://localhost:8001/productos/${id}`);
     const data = await res.json();
     //  console.log(data)
     setInventory({

@@ -41,7 +41,7 @@ const Table = ({search}) => {
             'success'
           )
            //eliminar backend
-     await axios.delete(`http://localhost:8001/inventario/${id}`, {});
+     await axios.delete(`http://localhost:8001/productos/${id}`, {});
 
       // console.log(response)
       //eliminar frondEnd

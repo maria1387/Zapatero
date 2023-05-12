@@ -20,7 +20,7 @@ const ZapateroProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8001/inventario");
+        const response = await fetch("http://localhost:8001/productos");
         const data = await response.json();
         setZapateroData(data);
       } catch (error) {
