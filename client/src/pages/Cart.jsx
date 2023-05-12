@@ -11,7 +11,7 @@ const Cart = () => {
   const { carrito, total, agregar, eliminar} = useContext(ZapateroContext);
   return (
     <Helmet title={"Cart"}>
-      <section className="section-cart">
+      <section className="section-cart mb-12 ">
         <div className="section-cart__container">
           <div className="cart">
             {carrito.length === 0 ? (
