@@ -7,27 +7,13 @@ CREATE TABLE users(
   password varchar(255) not null,
   created_at date default current_date
 );
-SELECT * FROM users;
- INSERT INTO users(email , password)
-VALUES('paula@gmailcom', '123456');
-
-CREATE TABLE inventory(
-	id SERIAL PRIMARY KEY,
-	name VARCHAR(255) UNIQUE,
-	img VARCHAR(1000),
-	img1 VARCHAR(1000),
-	img2 VARCHAR(1000),
-	img3 VARCHAR(1000),
-	description VARCHAR(255),
-	price INT,
-	categoria VARCHAR(25),
-	destacado VARCHAR(25)
- );
-SELECT * FROM inventory;
-
- INSERT INTO inventory(name, img, img1, img2, img3, description, price, categoria, destacado)
-VALUES ( 'Bota Mujer Lara', 'https://batacl.vtexassets.com/arquivos/ids/864492-1200-auto?v=638175991533630000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/864493-1200-auto?v=638175991536770000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/864494-1200-auto?v=638175991539100000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/864496-1200-auto?v=638175991544270000&width=1200&height=auto&aspect=true','bota de invierno' , 54990, 'Mujer', 'destacado'),('Bota Mujer Beagle Mid', 'https://batacl.vtexassets.com/arquivos/ids/854107-1200-auto?v=638173654254100000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/854108-1200-auto?v=638173654257600000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/854110-1200-auto?v=638173654266270000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/854112-1200-auto?v=638173654271170000&width=1200&height=auto&aspect=true','BEAGLE es un calzado diseñado para la ciudad con una plantilla Ortholite, una membrana transpirable e impermeable y una suela de goma que ofrece un mejor agarre en las superficies.',47990, 'Mujer' ,'no destacado'),('Bota Niña Levi','https://batacl.vtexassets.com/arquivos/ids/822197-1200-auto?v=638146882804130000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/822198-1200-auto?v=638146882806730000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/822199-1200-auto?v=638146882808770000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/822202-1200-auto?v=638146882816970000&width=1200&height=auto&aspect=true', 'ssssssssssssss', 33990, 'Ninos', 'destacado' ),('Botín Escolar Niña Baby Star II', 'https://batacl.vtexassets.com/arquivos/ids/815283-1200-auto?v=638146851607330000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/815284-1200-auto?v=638146851609200000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/815285-1200-auto?v=638146851611730000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/815288-1200-auto?v=638146851618370000&width=1200&height=auto&aspect=true','ssssssss',31990,'Ninos','destacado'), ('Botín Escolar Niño Jacky Caña Alta', 'https://batacl.vtexassets.com/arquivos/ids/819887-1200-auto?v=638146871948000000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/819888-1200-auto?v=638146871949800000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/819889-1200-auto?v=638146871952130000&width=1200&height=auto&aspect=true','https://batacl.vtexassets.com/arquivos/ids/819892-1200-auto?v=638146871958530000&width=1200&height=auto&aspect=true','GGGGGGGGGGGGG',31990,'Ninos',' No destacado'),('Zapato Mujer Mike', 'https://batacl.vtexassets.com/arquivos/ids/622596-1200-auto?v=638052635412800000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/622597-1200-auto?v=638052635414530000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/622599-1200-auto?v=638052635418000000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/622601-1200-auto?v=638052635421600000&width=1200&height=auto&aspect=true','Stiletto básico versátil.', 24990, 'Mujer', 'No destacado');
 
 
-INSERT INTO inventory (name, img, img1, img2, img3, description, price, categoria, destacado)
-VALUES ('Zapatilla Urbana Hombre Rockefeller', 'https://batacl.vtexassets.com/arquivos/ids/813352-1200-auto?v=638146843251670000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/813353-1200-auto?v=638146843254000000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/813355-1200-auto?v=638146843258270000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/813357-1200-auto?v=638146843262000000&width=1200&height=auto&aspect=true','La tecnología Life Natural es antibacterial, entregando protección contra microorganismos a tus pies.', 33990, 'Hombre', 'Destacado'), ('Botín Hombre Sarychev', 'https://batacl.vtexassets.com/arquivos/ids/824850-1200-auto?v=638146895052070000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/824851-1200-auto?v=638146895054270000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/824852-1200-auto?v=638146895056900000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/824855-1200-auto?v=638146895063930000&width=1200&height=auto&aspect=true','rrrrrrrrrrrrr', 49990, 'Hombre', 'No destacado'), ('Botín Outdoor Hombre Ascent Kodiak', 'https://batacl.vtexassets.com/arquivos/ids/850912-1200-auto?v=638157786645430000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/850913-1200-auto?v=638157786648270000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/850915-1200-auto?v=638157786653570000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/850917-1200-auto?v=638157786658930000&width=1200&height=auto&aspect=true','Zapatilla Outdoor con mix de materiales,', 35990, 'Hombre', 'destacado'), ('Botín Mujer Real', 'https://batacl.vtexassets.com/arquivos/ids/866293-1200-auto?v=638176000790330000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/866294-1200-auto?v=638176000792830000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/866295-1200-auto?v=638176000795800000&width=1200&height=auto&aspect=true', 'https://batacl.vtexassets.com/arquivos/ids/866298-1200-auto?v=638176000803630000&width=1200&height=auto&aspect=true','jjjjjjjjjjjj', 34990, 'Mujer', 'No destacado');
+
+//Tabla de datos de los productos 
+CREATE TABLE producto (id SERIAL, modelo VARCHAR(50) NOT NULL, categoria VARCHAR(50) NOT NULL, talla VARCHAR(50) NOT NULL, precio INTEGER);
+
+//insertar datos en tabla productos
+//BD usuario Login
+CREATE TABLE usuarios ( id SERIAL, nombre VARCHAR(50) NOT NULL,  email VARCHAR(50) NOT NULL, password
+VARCHAR(60) NOT NULL, telefono VARCHAR(25), direccion  VARCHAR(60) );
