@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
@@ -23,5 +22,6 @@
     "passport-jwt": "^4.0.0",
     "pg": "^8.6.0",
     "pg-format": "^1.0.4"
-  }
+  },
+  "description": ""
 }
