@@ -24,12 +24,14 @@ const getTodosLosProductos= async (req, res) => {
 
 //postCrearProducto
 const crearProducto = async (req, res) => {
-  const { modelo, categoria, talla, precio } = req.body;
+  const { name, img, img1, img2, img3, description, price, categoria,destacado } = req.body;
+
   try {
     const result = await pool.query(
-      "insert into producto( modelo, categoria, talla, precio) values ($1, $2, $3, $4) returning *",
-      [ modelo, categoria, talla, precio]
+      "INSERT INTO inventory(name, img, img1, img2, img3, description, price, categoria, destacado) VALUES($1, $2, $3,$4, $5, $6, $7, $8, $9) RETURNING *",
+      [name, img, img1, img2, img3, description, price, categoria, destacado]
     );
+    
     res.json(result.rows[0]);
   } catch (error) {
     res.json({error:error.message});
@@ -58,9 +60,10 @@ try {
 //modificarProducto
 const modificarProducto = async (req, res) => {
   const {id} = req.params;
-  const {modelo, categoria, talla, precio } = req.body;
-  const result = await pool.query('UPDATE producto SET modelo =$1, categoria =$2, talla =$3, precio =$4 WHERE id = $4',
-  [ modelo, categoria, talla, precio]
+  const { name, img, img1, img2, img3, description, price, categoria,destacado} = req.body;
+  const result = await pool.query(
+    "UPDATE inventory SET name = $1, img=$2,img1=$3, img2=$4, img3=$5, description = $6, price=$7, categoria=$8, destacado =$9 WHERE id = $10  RETURNING *",
+    [name, img, img1, img2, img3, description, price,categoria,destacado, id]
   );
   console.log(result)
 
