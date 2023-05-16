@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { useContext, useEffect, useState } from "react";
 import { ZapateroContext } from "../context/ZapateroProvider";
 
+
 const Home = () => {
   const { ZapateroData } = useContext(ZapateroContext);
   const [destacadoProducts, setDestacadoProducts] = useState([]);
@@ -21,6 +22,7 @@ const Home = () => {
 
   return (
     <Helmet title={"Home"}>
+     
       <Carusel />
 
       <h1 className="flex justify-center">Productos Destacados </h1>
