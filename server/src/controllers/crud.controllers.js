@@ -1,8 +1,8 @@
-const pool = require("../database/db");
+const pool = require("../db/index");
 
-const getPrueba = async (req, res) => {
-  res.send("prueba segura");
-};
+// const getPrueba = async (req, res) => {
+//   res.send("prueba segura");
+// };
 
 // const crearProducto = (req, res) => {
 //     const producto = req.body;
@@ -12,8 +12,8 @@ const getPrueba = async (req, res) => {
 
 
 //muestra todos los productos
-const getTodosLosProductos= async (req, res) => {
- try {
+const getTodosLosProductos= async (req, res, next) => {
+  try {
   const todosLosProductos = await pool.query ('SELECT * FROM producto')
   res.json(todosLosProductos.rows)
  } catch (error) {
@@ -23,18 +23,18 @@ const getTodosLosProductos= async (req, res) => {
 
 
 //postCrearProducto
-const crearProducto = async (req, res) => {
-  const { name, img, img1, img2, img3, description, price, categoria,destacado } = req.body;
+const crearProducto = async (req, res, next)  => {
+  const { name, sku, img, img1, img2, img3, description, price, category,outstanding, model } = req.body;
 
   try {
     const result = await pool.query(
-      "INSERT INTO inventory(name, img, img1, img2, img3, description, price, categoria, destacado) VALUES($1, $2, $3,$4, $5, $6, $7, $8, $9) RETURNING *",
-      [name, img, img1, img2, img3, description, price, categoria, destacado]
+      "INSERT INTO producto(name, sku, img, img1, img2, img3, description, price, category, outstanding, model) VALUES($1, $2, $3,$4, $5, $6, $7, $8, $9, $10, $11) RETURNING *",
+      [name,sku, img, img1, img2, img3, description, price, category, outstanding, model]
     );
     
     res.json(result.rows[0]);
   } catch (error) {
-    res.json({error:error.message});
+    next(error);
   }
 };
 
@@ -58,36 +58,51 @@ try {
 
 
 //modificarProducto
-const modificarProducto = async (req, res) => {
-  const {id} = req.params;
-  const { name, img, img1, img2, img3, description, price, categoria,destacado} = req.body;
-  const result = await pool.query(
-    "UPDATE inventory SET name = $1, img=$2,img1=$3, img2=$4, img3=$5, description = $6, price=$7, categoria=$8, destacado =$9 WHERE id = $10  RETURNING *",
-    [name, img, img1, img2, img3, description, price,categoria,destacado, id]
-  );
-  console.log(result)
+const modificarProducto = async (req, res, next) => {
+  try {
+    const {id} = req.params;
+    const { name,sku, img, img1, img2, img3, description, price, category,outstanding, model} = req.body;
+    const result = await pool.query(
+      "UPDATE producto SET name =$1, sku=$2 img=$3, img1=$4, img2=$5, img3=$6, description = $7, price=$8, category=$9, outstanding =$10, model=$11 WHERE id = $12  RETURNING *",
+      [name, sku, img, img1, img2, img3, description, price,category,outstanding,model, id]
+    );
 
-  return res.json(result.rows[0])
-  if(result.rows.length === 0)
-return res.status(404).json({
-  message: 'Producto not found'});
+    if (result.rows.length === 0)
+      return res.status(404).json({
+        message: "Task not found",
+      });
+
+    return res.json(result.rows[0]);
+  } catch (error) {
+    next(error);
+  }
 };
 
-//eliminarProducto
-const eliminarProducto = async (req, res) => {
-const {id} = req.params;
-const result = await pool.query('DELETE FROM producto WHERE id = $1', [id])
-if(result.rowCount === 0)
-return res.status(404).json({message: 'Producto not found'});
-return result. sendStatus(204);
 
-}
+
+
+//eliminarProducto
+const eliminarProducto = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await pool.query("DELETE  FROM producto WHERE id = $1", [
+      id,
+    ]);
+    if (result.rowCount === 0)
+      return res.status(404).json({
+        message: "Task not found",
+      });
+    return res.sendStatus(204);
+  } catch (error) {
+    next(error);
+  }
+};
 
 
 
 
 module.exports = {
-  getPrueba,
+
   crearProducto,
   getTodosLosProductos,
   getUnProducto,

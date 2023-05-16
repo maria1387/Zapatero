@@ -1,12 +1,12 @@
 const {Router} = require('express');
-const pool = require('../database/db');
+// const pool = require('../db/index');
 const router = Router();
 const {   getPrueba, crearProducto,getTodosLosProductos, getUnProducto, modificarProducto, eliminarProducto } = require('../controllers/crud.controllers')
 
 
 
 
-router.get('/productos',getPrueba )
+// router.get('/productos',getPrueba )
 
 //muestra todos los productos
 router.get('/productos', getTodosLosProductos )

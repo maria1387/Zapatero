@@ -16,10 +16,10 @@ app.use(passport.initialize())
 
 //import routes
 const authRoutes = require('./routes/auth')
-// const inventoryRoutes = require('./routes/inventory.routes')
+const CRUDRoutes = require('./routes/crud.routes')
 //initialize routes
 app.use('/api', authRoutes)
-// app.use(inventoryRoutes)
+app.use(CRUDRoutes)
 //app start
 const appStart = () => {
   try {

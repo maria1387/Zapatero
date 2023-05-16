@@ -12,7 +12,7 @@ const Home = () => {
   const [destacadoProducts, setDestacadoProducts] = useState([]);
   useEffect(() => {
     const filterDestacadoProducts = ZapateroData.filter(
-      (item) => item.destacado === "destacado"
+      (item) => item.outstanding === "destacado"
     );
 
     setDestacadoProducts(filterDestacadoProducts);
