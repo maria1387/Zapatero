@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const FormZapatero = () => {
+
   const [inventory, setInventory] = useState({
     name: "",
     model: "",
@@ -80,7 +81,7 @@ const FormZapatero = () => {
       price: data.price,
       category: data.category,
       outstanding: data.outstanding,
-      sku:data.sku,
+      sku:data.sku
       
     });
     setEditing(true);
@@ -255,9 +256,9 @@ const FormZapatero = () => {
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               />
               <select
-                value={inventory.categoria}
+                value={inventory.category}
                 onChange={handleChange}
-                name="categoria"
+                name="category"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option>Seleccione un categoria</option>
@@ -269,13 +270,13 @@ const FormZapatero = () => {
 
             <div>
               <Title
-                titleLabel=" Categoria "
+                titleLabel=" Destacado "
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               />
               <select
-                value={inventory.destacado}
+                value={inventory.outstanding}
                 onChange={handleChange}
-                name="destacado"
+                name="doutstanding"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option>Seleccione un item</option>
@@ -288,23 +289,26 @@ const FormZapatero = () => {
           <div className=" grid gap-6 mb-6 md:grid-cols-2">
             <Button
               type="submit"
-              textButton="guadar"
+              textButton="Guardar"
               disabled={
                 !inventory.name ||
+                !inventory.sku ||
                 !inventory.img ||
                 !inventory.img1 ||
                 !inventory.img2 ||
                 !inventory.img3 ||
                 !inventory.description ||
                 !inventory.price ||
-                !inventory.categoria ||
-                !inventory.destacado
+                !inventory.category ||
+                !inventory.outstanding||
+                !inventory.model
               }
               className=" w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-28"
             />
 
             <Button
               textButton="Cancelar"
+              onClick={() => navigate(`/dashboard`)} 
               className="w-full text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-28"
             />
           </div>

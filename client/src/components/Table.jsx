@@ -4,7 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Pagination from "./Pagination";
 import  Swal from "sweetalert2"
-
+import { MdDelete } from 'react-icons/md';
+import { BiEditAlt } from 'react-icons/bi';
 /* eslint-disable react/prop-types */
 const Table = ({search}) => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const Table = ({search}) => {
       console.log(error);
     }
   };
-  
+ 
 
        //metodo de filtrado 2   
        const results = !search ? ZapateroData : ZapateroData.filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
@@ -105,18 +106,16 @@ const Table = ({search}) => {
                 <td className="px-6 py-4">{item.categoria}</td>
                 <td className="px-6 py-4">${item.price}</td>
                 <td className="px-6 py-4">
-                  <button
+                  <div className=" flex justify-center">
+                  <BiEditAlt
                     onClick={() => handleEdit(item.id)}
                     className="font-medium text-white hover:underline ml-3"
-                  >
-                    Edit
-                  </button>
-                  <button
+                  />
+                  <MdDelete
                     onClick={() => handleDelete(item.id)}
-                    className="font-medium text-white hover:underline ml-3"
-                  >
-                    eliminar
-                  </button>
+                    className=" ml-3"
+                  />
+                  </div>
                 </td>
               </tr>
             )).slice(firstIndex, lastIndex)}

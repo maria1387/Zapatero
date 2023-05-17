@@ -61,9 +61,9 @@ try {
 const modificarProducto = async (req, res, next) => {
   try {
     const {id} = req.params;
-    const { name,sku, img, img1, img2, img3, description, price, category,outstanding, model} = req.body;
+    const { name, sku, img, img1, img2, img3, description, price, category,outstanding, model} = req.body;
     const result = await pool.query(
-      "UPDATE producto SET name =$1, sku=$2 img=$3, img1=$4, img2=$5, img3=$6, description = $7, price=$8, category=$9, outstanding =$10, model=$11 WHERE id = $12  RETURNING *",
+      "UPDATE producto SET name =$1, sku=$2, img=$3, img1=$4, img2=$5, img3=$6, description = $7, price=$8, category=$9, outstanding =$10, model=$11 WHERE id = $12  RETURNING *",
       [name, sku, img, img1, img2, img3, description, price,category,outstanding,model, id]
     );
 
