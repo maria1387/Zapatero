@@ -37,6 +37,22 @@ exports.register = async (req, res) => {
     });
   }
 };
+exports.validarRoles = async (req, res) => {
+  const { email  } = req.body;
+
+  try {
+    const  prueba= await pool.query ('SELECT roles FROM users WHERE email')[email]
+    res.json(prueba.rows)
+   
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({
+      error: error.message,
+    });
+  }
+};
+
+
 
 exports.login = async (req, res) => {
   let user = req.user;

@@ -32,7 +32,7 @@ const Routers = () => {
 
 
 const Roles = {
-    Admin: 'admin',
+    Admin: 'admin'
      
 }
   return (
