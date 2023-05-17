@@ -5,6 +5,7 @@ CREATE TABLE users(
   user_id serial primary key,
   email varchar(255) unique not null,
   password varchar(255) not null,
+  roles varchar(25),
   created_at date default current_date
 );
 

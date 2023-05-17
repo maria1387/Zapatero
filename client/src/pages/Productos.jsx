@@ -13,19 +13,19 @@ const Productos = () => {
     const filterValue = e.target.value;
     if (filterValue === "Mujer") {
       const filteredProduct = ZapateroData.filter(
-        (item) => item.categoria === "Mujer"
+        (item) => item.category === "Mujer"
       );
       setProductsData(filteredProduct);
     }
     if (filterValue === "Hombre") {
       const filteredProduct = ZapateroData.filter(
-        (item) => item.categoria === "Hombre"
+        (item) => item.category === "Hombre"
       );
       setProductsData(filteredProduct);
     }
     if (filterValue === "Ninos") {
       const filteredProduct = ZapateroData.filter(
-        (item) => item.categoria === "Ninos"
+        (item) => item.category === "Ninos"
       );
       setProductsData(filteredProduct);
     }
@@ -33,6 +33,7 @@ const Productos = () => {
 
    //metodo de filtrado 2   
    const results = !search ?  ZapateroData  :  ZapateroData .filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+   
   return (
     <div>
       <Helmet title="Shop">
