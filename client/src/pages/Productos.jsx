@@ -33,6 +33,7 @@ const Productos = () => {
 
    //metodo de filtrado 2   
    const results = !search ?  ZapateroData  :  ZapateroData .filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+   
   return (
     <div>
       <Helmet title="Shop">

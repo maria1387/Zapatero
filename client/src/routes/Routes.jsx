@@ -30,19 +30,24 @@ const Routers = () => {
     return <>{!isAuth ? <Outlet /> : <Navigate to="/dashboard" />}</>;
   };
 
+
+const Roles = {
+    Admin: 'admin'
+     
+}
   return (
     <Routes>
       {/* rutas públicas */}
-    
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/zapatero/:id" element={<ZapateroDetails />} />
-        <Route path="/shop" element={<Productos />} />
-     
+
+      <Route path="/" element={<Home />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="*" element={<NotFound />} />
+      <Route path="/zapatero/:id" element={<ZapateroDetails />} />
+      <Route path="/shop" element={<Productos />} />
+
       {/* rutas privada */}
       <Route element={<PrivateRoutes />}>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" roles={[Roles.Admin]} element={<Dashboard />} />
         <Route path="/form/new" element={<FormZapatero />} />
         <Route path="/edit/:id" element={<FormZapatero />} />
         <Route path="/register" element={<Register />} />
@@ -51,6 +56,7 @@ const Routers = () => {
       {/* rutas restringida  */}
       <Route element={<RestrictedRoutes />}>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Route>
     </Routes>
   );
