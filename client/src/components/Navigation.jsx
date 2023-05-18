@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import { unauthenticateUser } from "../redux/slices/authSlice";
 const Navigation = () => {
   const { total } = useContext(ZapateroContext);
-
+ 
   // const [theme, setTheme] = useState('light');
   const [toggle, setToggle] = useState(false);
 
@@ -90,6 +90,7 @@ const Navigation = () => {
                   >
                     Logout
                   </button> */}
+              
                 </div>
               ) : (
                 <div className="flex flex-col font-medium mt-4 rounded-lg bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
