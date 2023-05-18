@@ -99,12 +99,18 @@ const FormZapatero = () => {
   return (
     <>
       <Sidebar />
-      <div className=" p-4 sm:ml-64  flex justify-center">
-        <form className="mt-32 space-y-6" onSubmit={handleSubmit}>
-          <Title
-            h1={editing ? "Editar Inventario " : "Create Inventario "}
-            className="  mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      <div className=" p-4 sm:ml-64 mt-32   ">
+        <form className=" container1 space-y-6" onSubmit={handleSubmit}>
+        <div className="text-2xl flex justify-center mb-10">
+        <Title
+            h1={editing ? "Editar Inventario " : " Inventario nuevo "}
+           
           />
+          </div>
+          {/* <Title
+            h1={editing ? "Editar Inventario " : " Inventario nuevo "}
+            className="  mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          /> */}
           <div className=" grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <Title
@@ -286,7 +292,7 @@ const FormZapatero = () => {
             </div>
           </div>
 
-          <div className=" grid gap-6 mb-6 md:grid-cols-2">
+          <div className=" grid gap-6 mb-6 md:grid-cols-2 sm:mb-28">
             <Button
               type="submit"
               textButton="Guardar"
@@ -303,13 +309,13 @@ const FormZapatero = () => {
                 !inventory.outstanding||
                 !inventory.model
               }
-              className=" w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-28"
+              className=" w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             />
 
             <Button
               textButton="Cancelar"
               onClick={() => navigate(`/dashboard`)} 
-              className="w-full text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-28"
+              className="w-full text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             />
           </div>
         </form>

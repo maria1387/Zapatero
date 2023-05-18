@@ -7,8 +7,9 @@ import "../pages/cart.css";
 import Input from "../components/Input";
 import { formatPrice } from "../components/format-price";
 import Footer from "../components/Footer";
+import Title from "../components/Title";
 const Cart = () => {
-  const { carrito, total, agregar, eliminar} = useContext(ZapateroContext);
+  const { carrito, total, agregar, eliminar } = useContext(ZapateroContext);
   return (
     <Helmet title={"Cart"}>
       <section className="section-cart mb-12 ">
@@ -19,7 +20,9 @@ const Cart = () => {
             ) : (
               <>
                 <div>
-                  <h2 className="cart-h2">Detalle del pedido:</h2>
+                  <div className="text-3xl flex justify-center my-20 ">
+                    <Title h1=" Detalle del pedido:" />
+                  </div>
 
                   <div className="">
                     {carrito?.map((item, i) => (
@@ -33,17 +36,17 @@ const Cart = () => {
                             <img src={item.img} className="img-cart" />
                           </div>
                           <div className="cart-name">
-                            <h5 className="text-capitalize">{item.name}</h5>
+                            <h5 className=" font-bold">{item.name}</h5>
                           </div>
                         </div>
                         <div className="cart-right">
-                        <p className="cart-right__p">
-                            $ { formatPrice(item.cantidad * item.price)}
+                          <p className="cart-right__p">
+                            $ {formatPrice(item.cantidad * item.price)}
                           </p>
 
                           <div className="flex items-center space-x-3">
                             <button
-                               onClick={() => (eliminar(item.id))}
+                              onClick={() => eliminar(item.id)}
                               className="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                               type="button"
                             >
@@ -72,7 +75,7 @@ const Cart = () => {
                               />
                             </div>
                             <button
-                               onClick={() => (agregar(item.id))}
+                              onClick={() => agregar(item.id)}
                               className="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                               type="button"
                             >
@@ -95,8 +98,8 @@ const Cart = () => {
                         </div>
                       </div>
                     ))}
-                           
-                    <h4 className="">Total:$ {formatPrice(total)}</h4>
+
+                    <h4 className="text-2xl font-bold ">Total:$ {formatPrice(total)}</h4>
                     <Button className="buttonPrice">Ir a Pagar</Button>
                   </div>
                 </div>
@@ -105,7 +108,7 @@ const Cart = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </Helmet>
   );
 };

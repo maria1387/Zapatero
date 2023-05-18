@@ -12,10 +12,10 @@ const CarusellDetails = () => {
 
   const ZapateroCarrusel = ZapateroData.find((zapatero) => String(zapatero.id) === id);
   return (
-    <div className="">
-        <Carousel autoPlay infiniteLoop showIndicators={false}>
-    <div>
-      <img alt="" src={ZapateroCarrusel && ZapateroCarrusel.img}className="" />
+    <div className="carousel-root1 " >
+        <Carousel autoPlay infiniteLoop showIndicators={false}className=""  >
+    <div >
+      <img alt="" src={ZapateroCarrusel && ZapateroCarrusel.img} />
    
     </div>
     <div>

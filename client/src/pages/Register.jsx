@@ -45,10 +45,9 @@ const Register = () => {
     <section className=" w-80 mx-auto flex justify-center mt-12 ">
       <div className=" mt-12 mb-10 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form className="space-y-6" action="#"  onSubmit={(e) => onSubmit(e)}>
-          <Title
-            h1=" Registrate"
-            className="text-xl font-medium text-gray-900 dark:text-white"
-          />
+        <div className="text-2xl flex justify-center mb-10">
+              <Title h1=" Register" />
+            </div>
  
        
           <div>

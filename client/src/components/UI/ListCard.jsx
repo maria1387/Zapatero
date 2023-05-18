@@ -2,12 +2,21 @@
 
 import Card from "./Card";
 
-const ListCard = ({data}) => {
+
+const ListCard = ({data, search, }) => {
+
+ 
+   //metodo de filtrado 
+   const results = !search
+   ? data
+   : data.filter((dato) =>
+       dato.name.toLowerCase().includes(search.toLocaleLowerCase())
+     );
 
   return (
     <>
-      {data?.map((item, index) => (
-        <Card item={item} key={index} />
+      {results?.map((item, index) => (
+        <Card item={item} key={index}  />
       ))}
     </>
   );

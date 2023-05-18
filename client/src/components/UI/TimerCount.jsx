@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 import Clock from "./Clock";
 import imagen from "../../assets/img/imagen5.jpg";
+import Title from "../Title";
 
 const TimerCount = () => {
   return (
@@ -11,9 +12,10 @@ const TimerCount = () => {
           className="flex flex-col items-center bg-blue-700 border border-blue-700 rounded-lg  md:flex-row md:max-w-full hover:bg-blue-700 dark:border-blue-700 dark:bg-blue-700 text-white  "
         >
           <div className="flex flex-col justify-between  leading-normal p-10">
-            <h5 className="mb-4 text-2xl font-bold tracking-tight  text-white">
-              Nueva Promocion de Zapatos
-            </h5>
+            
+            <div className="text-2xl flex justify-center mb-10">
+              <Title h1="    Nueva Promoción de Zapatos" />
+            </div>
             <p className="mb-3 font-normal text-white  ">
               Here are the biggest enterprise technology acquisitions of 2021 so
               far, in reverse chronological order.

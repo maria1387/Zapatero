@@ -71,16 +71,19 @@ const Table = ({search}) => {
                 <span className="sr-only">{Image}</span>
               </th>
               <th scope="col" className="px-6 py-3">
-                Product name
+                nombre de Productos
               </th>
               <th scope="col" className="px-6 py-3">
-                Color
+                modelo
               </th>
               <th scope="col" className="px-6 py-3">
-                Category
+                Codigo sku
               </th>
               <th scope="col" className="px-6 py-3">
-                Price
+               Categoria
+              </th>
+              <th scope="col" className="px-6 py-3">
+               Precio
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -102,8 +105,9 @@ const Table = ({search}) => {
                 >
                   {item.name}
                 </th>
-                <td className="px-6 py-4">{item.description}</td>
-                <td className="px-6 py-4">{item.categoria}</td>
+                <td className="px-6 py-4">{item.model}</td>
+                <td className="px-6 py-4">{item.sku}</td>
+                <td className="px-6 py-4">{item.category}</td>
                 <td className="px-6 py-4">${item.price}</td>
                 <td className="px-6 py-4">
                   <div className=" flex justify-center">

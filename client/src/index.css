@@ -8,7 +8,10 @@
 	margin: auto;
 	
 }
-
+.img-pago{
+width: 3vw;
+margin-left: 10px;
+}
 
 /* .home{
 	background-color: rgba(0, 0, 0, 0.496);
@@ -24,5 +27,16 @@
 	.navbar-table{
 		display: none;
 	} 
-
+	
 }
+
+@media (max-width: 576px) {
+	.carousel-root1{
+		width: 80% ;
+		margin: auto;
+	}
+
+		
+	} 
+
+
