@@ -31,6 +31,8 @@ const Login = () => {
 
     try {
       await onLogin(values);
+      // if(values = email)
+      
       dispatch(authenticateUser());
 
       localStorage.setItem("isAuth", "true");

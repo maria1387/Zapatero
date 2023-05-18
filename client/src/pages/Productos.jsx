@@ -13,19 +13,19 @@ const Productos = () => {
     const filterValue = e.target.value;
     if (filterValue === "Mujer") {
       const filteredProduct = ZapateroData.filter(
-        (item) => item.categoria === "Mujer"
+        (item) => item.category === "Mujer"
       );
       setProductsData(filteredProduct);
     }
     if (filterValue === "Hombre") {
       const filteredProduct = ZapateroData.filter(
-        (item) => item.categoria === "Hombre"
+        (item) => item.category === "Hombre"
       );
       setProductsData(filteredProduct);
     }
     if (filterValue === "Ninos") {
       const filteredProduct = ZapateroData.filter(
-        (item) => item.categoria === "Ninos"
+        (item) => item.category === "Ninos"
       );
       setProductsData(filteredProduct);
     }
