@@ -3,7 +3,7 @@ import { onLogin } from "../api/auth";
 
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../redux/slices/authSlice";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Title from "../components/Title";
 import Button from "../components/Button";
@@ -12,7 +12,7 @@ import Helmet from "../components/Helmet/Helmet";
 import Footer from "../components/Footer";
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -29,7 +29,12 @@ const Login = () => {
 
     try {
       await onLogin(values);
-      // if(values = email)
+      
+      if(values === values.email){
+        navigate("/dashboard")
+      }else{
+        navigate("/perfil")
+      }
 
       dispatch(authenticateUser());
 
