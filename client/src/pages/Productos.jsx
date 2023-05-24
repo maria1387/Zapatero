@@ -5,7 +5,6 @@ import { ZapateroContext } from "../context/ZapateroProvider";
 import ListCard from "../components/UI/ListCard";
 import Search from "../components/Search";
 import Title from "../components/Title";
-import Footer from "../components/Footer";
 
 const Productos = () => {
   const { ZapateroData } = useContext(ZapateroContext);
@@ -71,7 +70,6 @@ const Productos = () => {
             )}
           </div>
         </section>
-        <Footer/>
       </Helmet>
     </div>
   );

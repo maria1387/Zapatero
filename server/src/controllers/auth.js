@@ -43,12 +43,13 @@ exports.register = async (req, res) => {
 };
 
 exports.getPrueba = async (req, res) => {
+  console.log(getPrueba)
   const { email  } = req.body;
 
   try {
     console.log(email)
-    const  prueba= await pool.query ('SELECT roles FROM users WHERE email')[email]
-    console.log(prueba)
+    const  prueba= await pool.query ('SELECT roles FROM users WHERE email = $1')
+   
 
     res.json(prueba.rows)
    
@@ -87,7 +88,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.protected = async (req, res) => {
+exports.protectedd = async (req, res) => {
   try {
     return res.status(200).json({
       info: "información protegida",

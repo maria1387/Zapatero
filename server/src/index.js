@@ -8,6 +8,10 @@ const cors = require('cors')
 //import passport middleware
 require('./middlewares/passport-middleware')
 
+const server = app.listen(8002, () => {
+  console.log("Servidor iniciado en el puerto 8002");
+});
+
 //initialize middlewares
 app.use(express.json())
 app.use(cookieParser())
@@ -32,3 +36,4 @@ const appStart = () => {
 }
 
 appStart()
+module.exports = server;

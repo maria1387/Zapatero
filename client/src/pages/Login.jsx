@@ -31,8 +31,8 @@ const Login = () => {
     try {
       await onLogin(values);
      const data = await (fetchRoles)
-     console.log()
      console.log(data)
+     
       const pruebaData = data.roles
      console.log(pruebaData)
       if(pruebaData === "admin"){

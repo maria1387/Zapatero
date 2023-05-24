@@ -1,3 +1,3 @@
-export function formatPrice(num) {
-  return num.toLocaleString('en-US');
+export function formatPrice(number) {
+  return number.toLocaleString('en-US');
 }
