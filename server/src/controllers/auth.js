@@ -3,6 +3,10 @@ const { hash } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");
 const { SECRET } = require("../constants");
 
+
+
+
+
 exports.getUsers = async (req, res) => {
   try {
     const { rows } = await db.query("select user_id, email from users");
@@ -37,11 +41,15 @@ exports.register = async (req, res) => {
     });
   }
 };
-exports.validarRoles = async (req, res) => {
+
+exports.getPrueba = async (req, res) => {
   const { email  } = req.body;
 
   try {
+    console.log(email)
     const  prueba= await pool.query ('SELECT roles FROM users WHERE email')[email]
+    console.log(prueba)
+
     res.json(prueba.rows)
    
   } catch (error) {
@@ -54,20 +62,7 @@ exports.validarRoles = async (req, res) => {
 
 
 
-// exports.validarRoles = async (req, res) => {
-//   const { email  } = req.body;
 
-//   try {
-//     const  prueba= await pool.query ('SELECT roles FROM users WHERE email')[email]
-//     res.json(prueba.rows)
-//     console.log (prueba)
-//   } catch (error) {
-//     console.log(error.message);
-//     return res.status(500).json({
-//       error: error.message,
-//     });
-//   }
-// };
 
 exports.login = async (req, res) => {
   let user = req.user;

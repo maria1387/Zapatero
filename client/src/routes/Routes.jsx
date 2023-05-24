@@ -16,6 +16,8 @@ import ZapateroDetails from "../pages/ZapateroDetails";
 import FormZapatero from "../components/FormZapatero";
 
 import Productos from "../pages/Productos";
+import Perfil from "../pages/Perfil";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const Routers = () => {
   const PrivateRoutes = () => {
@@ -31,10 +33,6 @@ const Routers = () => {
   };
 
 
-const Roles = {
-    Admin: 'admin'
-     
-}
   return (
     <Routes>
       {/* rutas públicas */}
@@ -47,16 +45,18 @@ const Roles = {
 
       {/* rutas privada */}
       <Route element={<PrivateRoutes />}>
-        <Route path="/dashboard" roles={[Roles.Admin]} element={<Dashboard />} />
+        <Route path="/dashboard"  element={<Dashboard />} />
         <Route path="/form/new" element={<FormZapatero />} />
         <Route path="/edit/:id" element={<FormZapatero />} />
-        <Route path="/register" element={<Register />} />
+        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/perfil" element={<Perfil />} />
       </Route>
 
       {/* rutas restringida  */}
       <Route element={<RestrictedRoutes />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
       </Route>
     </Routes>
   );

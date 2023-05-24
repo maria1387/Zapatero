@@ -23,12 +23,12 @@ const Home = () => {
   return (
     <Helmet title={"Home"}>
       <Carusel />
-<section className="text-center">
-      <div className="text-3xl flex justify-center  my-20 ">
+<section className="">
+      <div className=" text-center text-3xl flex justify-center  my-20 ">
         <Title h1=" Productos Destacados" className="" />
       </div>
 
-      <div className="  grid mb-8  dark:border-gray-700 md:mb-12 md:grid-cols-3 gap-4 mx-auto w-full max-w-screen-xl p-4 py-6 ">
+      <div className="  grid mb-8  dark:border-gray-700 md:mb-12 md:grid-cols-3 gap-4 mx-auto w-full max-w-screen-xl p-4 py-6  ">
         <ListCard data={destacadoProducts} />
       </div>
       </section>

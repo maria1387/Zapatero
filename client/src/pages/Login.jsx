@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { onLogin } from "../api/auth";
+import {   onLogin,fetchRoles } from "../api/auth";
 
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../redux/slices/authSlice";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate  } from "react-router-dom";
 
 import Title from "../components/Title";
 import Button from "../components/Button";
@@ -12,7 +12,9 @@ import Helmet from "../components/Helmet/Helmet";
 import Footer from "../components/Footer";
 
 const Login = () => {
+  
   const navigate = useNavigate();
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -28,8 +30,12 @@ const Login = () => {
 
     try {
       await onLogin(values);
-      
-      if(values === values.email){
+     const data = await (fetchRoles)
+     console.log()
+     console.log(data)
+      const pruebaData = data.roles
+     console.log(pruebaData)
+      if(pruebaData === "admin"){
         navigate("/dashboard")
       }else{
         navigate("/perfil")
@@ -104,12 +110,12 @@ const Login = () => {
                   className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 />
               </div>
-              <a
-                href="#"
+              <NavLink
+                 to="/forgotPassword"
                 className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
               >
                 ¿Olvidaste tú password?
-              </a>
+              </NavLink>
             </div>
 
             <Button
@@ -118,7 +124,7 @@ const Login = () => {
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             />
 
-            {/* <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+            <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
             Si no posees cuenta,
             <NavLink
               to="/Register"
@@ -127,7 +133,7 @@ const Login = () => {
            
               Registrate
             </NavLink>
-          </div> */}
+          </div>
             <div>
               <NavLink
                 className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"

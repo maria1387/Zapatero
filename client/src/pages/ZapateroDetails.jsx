@@ -65,8 +65,9 @@ const ZapateroDetalles = () => {
                 <div className=" flex  md:flex-row md:max-w-xl ">
                   
                   <h4 className="font-bold ml-2 mt-3">Paga en <span className="text-red-600"> 6</span> cuotas de  <span className="text-red-600">$5.832 </span>sin interés </h4>
-                  <img src={pago}  className="img-pago" alt="" />
-                 
+                  <div className=" flex  md:flex-row md:max-w-xl ">
+                  <img src={pago}  className="img-pago " alt="" />
+                  </div>
                 </div>
                 <h3>¡Consiguelos ya! Quedan pocas unidades en stock</h3>
                 </div>

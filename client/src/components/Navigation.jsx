@@ -9,24 +9,17 @@ import { useDispatch } from "react-redux";
 import { fetchProtectedInfo, onLogout } from "../api/auth";
 import { useSelector } from "react-redux";
 import { unauthenticateUser } from "../redux/slices/authSlice";
+import zapatos from "../assets/img/zapato.png"
 const Navigation = () => {
   const { total } = useContext(ZapateroContext);
- 
-  // const [theme, setTheme] = useState('light');
+  const [values, ] = useState({
+    email: "",
+    // password: "",
+  });
+
   const [toggle, setToggle] = useState(false);
 
-  // useEffect(() => {
-  //     if (theme === 'dark') {
-  //         document.documentElement.classList.add('dark');
-  //     } else {
-  //         document.documentElement.classList.remove('dark');
-  //     }
-  // }, [theme]);
-
-  // const handleThemeSwitch = () => {
-  //     setTheme(theme === 'dark' ? 'light' : 'dark');
-  // };
-
+ 
   // const navigate = useNavigate();
   const { isAuth } = useSelector((state) => state.auth);
 
@@ -69,11 +62,11 @@ const Navigation = () => {
       <nav className="border-blue-900 bg-blue-900 dark:bg-gray-800 fixed w-full z-10 top-0 left-0 border-b dark:border-gray-700 ">
         <div className=" container1 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
-            {/* <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8 mr-3"
+            <img
+              src={zapatos}
+              className="h-14 mr-3"
               alt="Flowbite Logo"
-            /> */}
+            />
 
             <h1 className="self-center text-2xl font-medium  whitespace-nowrap text-gray-50 ">
               Zapatero
@@ -90,7 +83,7 @@ const Navigation = () => {
                   >
                     Logout
                   </button> */}
-              
+              <p>{values.email}</p>
                 </div>
               ) : (
                 <div className="flex flex-col font-medium mt-4 rounded-lg bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
