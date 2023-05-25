@@ -94,7 +94,7 @@ const Sidebar = () => {
 
             <li>
               <NavLink
-                    to="/register"
+                  
                 className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-blue-300 dark:hover:bg-gray-700"
               >
                 <svg

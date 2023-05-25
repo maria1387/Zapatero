@@ -2,43 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.container1{
-	width: 80%;
-	margin: auto;
-	
+.container1 {
+  width: 80%;
+  margin: auto;
 }
-.img-pago{
-width: 3vw;
-margin-left: 10px;
+.img-pago {
+  width: 3vw;
+  margin-left: 10px;
 }
 
-/* .home{
-	background-color: rgba(0, 0, 0, 0.496);
-	position: relative;
-  }
-  .home-p{
+.home {
+  width: 100%;
+ margin-top: 32px;
+  height: 53vh;
+  overflow: hidden;
+  position: relative;
+}
+.home-p {
+  font-size: 3rem;
+  font-family: Ultra;
   position: absolute;
-  top:12;
+  width: 100%;
+  text-align: center;
+  top: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 4rem;
+  z-index: 3;
+  text-shadow: 0 0 0.5rem rgb(9, 9, 34);
+  margin-top: 6rem;
+}
+.home-button {
+  position: absolute;
 
-  
-  } */
+  top: 3rem;
+  z-index: 3;
+  margin-top: 10rem;
+}
+
 @media (min-width: 576px) {
-	.navbar-table{
-		display: none;
-	} 
-	
+  .navbar-table {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
-	.carousel-root1{
-		width: 80% ;
-		margin: auto;
-	}
-	.img-pago {
-display: none;
-	}
-		
-	} 
+  .carousel-root1 {
+    width: 80%;
+    margin: auto;
+  }
+  .img-pago {
+    display: none;
+  }
+  .home-button {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
 
-
+	.home-button {
+	  display: none;
+	}
+  }

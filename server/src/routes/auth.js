@@ -13,7 +13,7 @@ const {
 const { registerValidation, loginValidation } = require('../validators/auth')
 const { userAuth } = require('../middlewares/auth-middleware')
 const { verifyToken } = require('../middlewares/verifyToken')
-// const forgotPassword = require('../controllers/password')
+
 const router = Router()
 
 router.get('/get-users', getUsers)
@@ -22,5 +22,5 @@ router.get('/protected', userAuth, protectedd)
 router.post('/register', registerValidation, validationMiddleware, register)
 router.post('/login', loginValidation, validationMiddleware, login )
 router.get('/logout', logout)
-// router.get('/forgotpassword', forgotPassword)
+
 module.exports = router

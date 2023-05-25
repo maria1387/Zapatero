@@ -24,7 +24,7 @@ const Home = () => {
     <Helmet title={"Home"}>
       <Carusel />
 <section className="">
-      <div className=" text-center text-3xl flex justify-center  my-20 ">
+      <div className=" text-center text-3xl flex justify-center  my-12 ">
         <Title h1=" Productos Destacados" className="" />
       </div>
 

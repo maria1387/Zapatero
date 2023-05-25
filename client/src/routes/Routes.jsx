@@ -17,7 +17,7 @@ import FormZapatero from "../components/FormZapatero";
 
 import Productos from "../pages/Productos";
 import Perfil from "../pages/Perfil";
-import ForgotPassword from "../pages/ForgotPassword";
+
 
 const Routers = () => {
   const PrivateRoutes = () => {
@@ -56,7 +56,7 @@ const Routers = () => {
       <Route element={<RestrictedRoutes />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
+   
       </Route>
     </Routes>
   );

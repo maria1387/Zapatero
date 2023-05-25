@@ -15,7 +15,7 @@ const pool = require("../db/index");
 const getTodosLosProductos= async (req, res, next) => {
   try {
   const todosLosProductos = await pool.query ('SELECT * FROM producto')
-  console.log(todosLosProductos.rows)
+  // console.log(todosLosProductos.rows)
   res.json(todosLosProductos.rows)
  } catch (error) {
   next(error);

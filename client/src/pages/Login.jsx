@@ -111,7 +111,7 @@ const Login = () => {
                 />
               </div>
               <NavLink
-                 to="/forgotPassword"
+           
                 className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
               >
                 ¿Olvidaste tú password?
@@ -136,10 +136,10 @@ const Login = () => {
           </div>
             <div>
               <NavLink
-                className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
+                className="ml-auto text-center text-sm text-blue-700 hover:underline dark:text-blue-500"
                 to="/"
               >
-                Volver al inicio
+                Volver al Inicio
               </NavLink>
             </div>
           </form>
