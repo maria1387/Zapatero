@@ -26,11 +26,11 @@ const Routers = () => {
     return <>{isAuth ? <Outlet /> : <Navigate to="/login" />}</>;
   };
 
-  const RestrictedRoutes = () => {
-    const { isAuth } = useSelector((state) => state.auth);
+  // const RestrictedRoutes = () => {
+  //   const { isAuth } = useSelector((state) => state.auth);
 
-    return <>{!isAuth ? <Outlet /> : <Navigate to="/dashboard" />}</>;
-  };
+  //   return <>{!isAuth ? <Outlet /> : <Navigate to="/perfil" />}</>;
+  // };
 
 
   return (
@@ -53,11 +53,11 @@ const Routers = () => {
       </Route>
 
       {/* rutas restringida  */}
-      <Route element={<RestrictedRoutes />}>
+      {/* <Route element={<RestrictedRoutes />}> */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
    
-      </Route>
+      {/* </Route> */}
     </Routes>
   );
 };

@@ -43,16 +43,22 @@ exports.register = async (req, res) => {
 };
 
 exports.getPrueba = async (req, res) => {
-  console.log(getPrueba)
-  const { email  } = req.body;
+
+  
+  const { email } = req.body;
+  console.log("este es el email", email)
+
 
   try {
-    console.log(email)
-    const  prueba= await pool.query ('SELECT roles FROM users WHERE email = $1')
-   
+    //const {rows} = await db.query('SELECT roles FROM users WHERE email = $1')[email]
+    const {rows} = await db.query(`SELECT roles FROM users WHERE email ='${email}'`)
+    console.log("este es el rol", rows)
+    return res.status(200).json({
+      success: true,
+      roles: rows[0].roles,
+    });
 
-    res.json(prueba.rows)
-   
+
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({

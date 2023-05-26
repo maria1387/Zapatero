@@ -17,7 +17,7 @@ const { verifyToken } = require('../middlewares/verifyToken')
 const router = Router()
 
 router.get('/get-users', getUsers)
-router.get('/prueba', getPrueba, verifyToken)
+router.post('/prueba', getPrueba, verifyToken)
 router.get('/protected', userAuth, protectedd)
 router.post('/register', registerValidation, validationMiddleware, register)
 router.post('/login', loginValidation, validationMiddleware, login )

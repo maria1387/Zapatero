@@ -30,17 +30,17 @@ const Login = () => {
 
     try {
       await onLogin(values);
-     const data = await (fetchRoles)
-     console.log(data)
-     
-      const pruebaData = data.roles
-     console.log(pruebaData)
-      if(pruebaData === "admin"){
-        navigate("/dashboard")
-      }else{
-        navigate("/perfil")
-      }
-
+      const {data} = await fetchRoles(values)
+      // console.log("respuesta api", data)
+       const {roles} = data
+       console.log("este es el rol del cliente", roles)
+       if (roles === "admin") {
+         console.log("el cliente es admin")
+         navigate("/dashboard")
+       } else {
+         navigate("/perfil")
+       }
+ 
       dispatch(authenticateUser());
 
       localStorage.setItem("isAuth", "true");

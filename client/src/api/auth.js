@@ -19,7 +19,7 @@ export async function onLogout() {
 export async function fetchProtectedInfo() {
   return await axios.get('http://localhost:8001/api/protected')
 }
-export async function fetchRoles() {
-  return await axios.get('http://localhost:8001/api/prueba')
+export async function fetchRoles(email) {
+  return await axios.post('http://localhost:8001/api/prueba',email)
 }
 
