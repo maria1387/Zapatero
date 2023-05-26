@@ -55,7 +55,7 @@ const SidebarC = () => {
           <ul className="space-y-2 font-medium">
             <li>
               <NavLink
-                    to="/dashboard"
+                    to=""
                 className="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-blue-300 dark:hover:bg-gray-700"
               >
                 <svg
@@ -68,7 +68,7 @@ const SidebarC = () => {
                   <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                 </svg>
-                <span className="ml-3">Dashboard</span>
+                <span className="ml-3">Historia</span>
               </NavLink>
             </li>
             <li>
@@ -110,7 +110,7 @@ const SidebarC = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">Users</span>
+                <span className="flex-1 ml-3 whitespace-nowrap">comprar</span>
               </NavLink>
             </li>
             <li>

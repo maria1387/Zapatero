@@ -20,11 +20,11 @@ CREATE TABLE producto(
 	img1 VARCHAR(1000),
 	img2 VARCHAR(1000),
 	img3 VARCHAR(1000),
-	description VARCHAR(255),
+	description VARCHAR(2000),
 	price INT,
 	category VARCHAR(25),
 outstanding VARCHAR(25),
-model VARCHAR(30)
+model VARCHAR(50)
  );
 
 SELECT * FROM producto;

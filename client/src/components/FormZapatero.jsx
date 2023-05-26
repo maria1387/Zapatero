@@ -146,7 +146,7 @@ const FormZapatero = () => {
             </div>
             <div>
               <Title
-                titleLabel=" Ingresa Modelo Producto "
+                titleLabel=" Ingresa sku Producto "
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               />
               <Input
@@ -282,11 +282,11 @@ const FormZapatero = () => {
               <select
                 value={inventory.outstanding}
                 onChange={handleChange}
-                name="doutstanding"
+                name="outstanding"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option>Seleccione un item</option>
-                <option value="Destacado">Destacado</option>
+                <option value="destacado">Destacado</option>
                 <option value="No destacado">no detacado</option>
               </select>
             </div>
