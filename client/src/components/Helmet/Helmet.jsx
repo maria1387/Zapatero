@@ -1,11 +1,16 @@
-/* eslint-disable react/prop-types */
-const Helmet = (props) => {
-	document. title = '¡Zapatero! ' + props.title
+import PropTypes from 'prop-types';
+const Helmet = ({title, children }) => {
+	document. title = '¡Zapatero! ' + title
 	return (
 		<div className="w-100">
-			{props.children}
+			{children}
 		</div>
 	)
 };
-
+Helmet.propTypes = {
+	title: PropTypes.node,
+	children : PropTypes.node,
+	
+ 
+  };
 export default Helmet;

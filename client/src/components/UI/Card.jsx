@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 
 import { useContext } from "react";
 import Button from "../Button";
@@ -106,5 +107,23 @@ const Card = ({item}) => {
     </>
   );
 };
+Card.propTypes = {
+  
+ 
+  item: PropTypes.shape({
+      
+  img1: PropTypes.string.isRequired,
+      
+     
+  name: PropTypes.string.isRequired,
+      
+     
+  price: PropTypes.number.isRequired,
+      
+     
+  id: PropTypes.number.isRequired,
+      
+    }).isRequired,
+  };
 
 export default Card;

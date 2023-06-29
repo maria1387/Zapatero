@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 
 import Title from "../components/Title";
 import Sidebar from "../components/SidebarC";

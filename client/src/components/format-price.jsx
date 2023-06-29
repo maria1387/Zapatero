@@ -1,3 +1,3 @@
-export function formatPrice(number) {
-  return number.toLocaleString('en-US');
-}
+const formatPrice = (price)=> price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+
+export { formatPrice }

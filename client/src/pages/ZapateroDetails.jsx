@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 
 import { useContext } from "react";
 import CarusellDetails from "../components/CaruselDetails";
@@ -45,7 +45,7 @@ const ZapateroDetalles = () => {
                   <div className="space-y-0.5 font-medium dark:text-white text-left">
                     <div className="text-sm text-gray-500 dark:text-gray-400 flex justify-around ml-12">
                       <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                        ${formatPrice(ZapateroDetail && ZapateroDetail.price)}
+                      ${formatPrice(ZapateroDetail && ZapateroDetail.price)}
                       </h2>
                       <Button
                         type="submit"

@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 const Title = ({titleLabel, h1, htmlFor}) => {
 	return (
 		<>
@@ -7,5 +7,11 @@ const Title = ({titleLabel, h1, htmlFor}) => {
 		</>
 	)
 };
+Title.propTypes = {
+	titleLabel: PropTypes.node,
+	h1: PropTypes.node,
+	htmlFor: PropTypes.node,
+ 
+  };
 
 export default Title;

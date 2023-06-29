@@ -3,9 +3,11 @@ const {
   getUsers,
   register,
   login,
-  protectedd,
+  protected,
   logout,
-  getPrueba
+  getPrueba,
+  forgotPassword,
+  resetPassword,
 } = require('../controllers/auth')
 const {
   validationMiddleware,
@@ -18,9 +20,10 @@ const router = Router()
 
 router.get('/get-users', getUsers)
 router.post('/prueba', getPrueba, verifyToken)
-router.get('/protected', userAuth, protectedd)
+router.get('/protected', userAuth, protected)
 router.post('/register', registerValidation, validationMiddleware, register)
 router.post('/login', loginValidation, validationMiddleware, login )
 router.get('/logout', logout)
-
+router.post('/forgot-password', forgotPassword)
+router.post('/reset-password', resetPassword)
 module.exports = router

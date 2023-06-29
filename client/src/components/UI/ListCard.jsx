@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 
+import PropTypes from 'prop-types';
 import Card from "./Card";
 
 
@@ -21,5 +21,8 @@ const ListCard = ({data, search, }) => {
     </>
   );
 };
-
+ListCard.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+  search: PropTypes.string,
+};
 export default ListCard;

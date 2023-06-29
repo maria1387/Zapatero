@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 import { useState } from "react";
 import Button from "../components/Button";
 import Search from "../components/Search";
@@ -38,7 +38,7 @@ const Dashboard = () => {
                   onClick={() => navigate("/form/new")}
                 />
               </div>
-              <div className="">
+              <div className="flex justify-center">
                 <Search setSearch={setSearch} />
               </div>
             </div>

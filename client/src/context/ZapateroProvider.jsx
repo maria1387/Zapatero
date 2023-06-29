@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 
 import { createContext, useState, useEffect } from "react";
 
@@ -20,7 +20,7 @@ const ZapateroProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8001/productos");
+        const response = await fetch(`${import.meta.env.VITE_URL}/productos`);
         const data = await response.json();
         setZapateroData(data);
       } catch (error) {
@@ -39,6 +39,7 @@ const ZapateroProvider = ({ children }) => {
 
 useEffect(() => {
     sumaTotal()
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [carrito])
 
 const agregar = (id) => {
@@ -90,5 +91,8 @@ const eliminar = (id) => {
     </ZapateroContext.Provider>
   );
 };
-
+ZapateroProvider.propTypes = {
+	children: PropTypes.node,
+ 
+  };
 export default ZapateroProvider;

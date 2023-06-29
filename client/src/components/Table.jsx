@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useContext, useState } from "react";
 import { ZapateroContext } from "../context/ZapateroProvider";
 import axios from "axios";
@@ -6,7 +7,7 @@ import Pagination from "./Pagination";
 import  Swal from "sweetalert2"
 import { MdDelete } from 'react-icons/md';
 import { BiEditAlt } from 'react-icons/bi';
-/* eslint-disable react/prop-types */
+
 const Table = ({search}) => {
   const navigate = useNavigate();
   const { ZapateroData, setZapateroData } = useContext(ZapateroContext);
@@ -68,7 +69,7 @@ const Table = ({search}) => {
           <thead className="text-xs text-white uppercase bg-blue-600 border-b border-blue-400 dark:text-white">
             <tr>
               <th scope="col" className="px-6 py-3">
-                <span className="sr-only">{Image}</span>
+                <span className="sr-only">Image</span>
               </th>
               <th scope="col" className="px-6 py-3">
                 nombre de Productos
@@ -137,5 +138,9 @@ const Table = ({search}) => {
     </>
   );
 };
+Table.propTypes = {
+	search: PropTypes.node,
+	
+  };
 
 export default Table;

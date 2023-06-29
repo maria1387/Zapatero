@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 const Input = ({
   type,
   placeholder,
@@ -11,7 +12,7 @@ const Input = ({
 }) => {
   return (
     <div>
-      <label >{textLabel}</label>
+      <label>{textLabel}</label>
       <input
         type={type}
         placeholder={placeholder}
@@ -23,6 +24,17 @@ const Input = ({
       {children}
     </div>
   );
+};
+
+Input.propTypes = {
+  type: PropTypes.node,
+  className: PropTypes.node,
+  children: PropTypes.node,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.node,
+  name: PropTypes.node,
+  value: PropTypes.node,
+  textLabel: PropTypes.node,
 };
 
 export default Input;

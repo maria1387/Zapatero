@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-
+import PropTypes from 'prop-types';
 import { motion } from "framer-motion";
 const Button = ({type, className, textButton, onClick}) => {
 	return (
@@ -9,5 +8,10 @@ const Button = ({type, className, textButton, onClick}) => {
 		</motion.button>
 	)
 };
-
+Button.propTypes = {
+	type: PropTypes.string,
+	className: PropTypes.string,
+	textButton: PropTypes.node,
+	onClick: PropTypes.func,
+  };
 export default Button;

@@ -111,6 +111,7 @@ const Login = () => {
                 />
               </div>
               <NavLink
+              to="/forgotPassword"
            
                 className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
               >

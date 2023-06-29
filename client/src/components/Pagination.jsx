@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
+import PropTypes from 'prop-types';
 const Pagination = ({
   productsPerPage,
-  setProductsPerPage,
+  // setProductsPerPage,
   currentPage,
   setCurrentPage,
   totalProducts
@@ -87,5 +85,12 @@ const Pagination = ({
     </nav>
   );
 };
+Pagination.propTypes = {
+  productsPerPage: PropTypes.node,
+  currentPage: PropTypes.node,
+  setCurrentPage: PropTypes.func,
+  totalProducts: PropTypes.node,
+
+  };
 
 export default Pagination;

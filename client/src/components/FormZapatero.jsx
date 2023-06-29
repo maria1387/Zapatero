@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
+import Sidebar from "./Sidebar";
 import Title from "./Title";
 import Input from "./Input";
 import Button from "./Button";
-import { useNavigate, useParams } from "react-router-dom";
-import Sidebar from "./Sidebar";
 
 const FormZapatero = () => {
 
-  const [inventory, setInventory] = useState({
+  const [product, setProduct] = useState({
     name: "",
     model: "",
     img: "",
@@ -19,8 +18,7 @@ const FormZapatero = () => {
     price: "",
     category: "",
     outstanding: "",
-    sku:"",
-    
+    sku: "",
   });
 
   const [editing, setEditing] = useState(false);
@@ -29,48 +27,42 @@ const FormZapatero = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(task);
 
     if (editing) {
-      // console.log('updata')
       const response = await fetch(
-        `http://localhost:8001/productos/${params.id}`,
+        `${import.meta.env.VITE_URL}/productos${params.id}`,
         {
           method: "PUT",
-
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(inventory),
+          body: JSON.stringify(product),
         }
       );
 
       const data = await response.json();
       console.log(data);
     } else {
-      await fetch("http://localhost:8001/productos", {
+      await fetch( `${import.meta.env.VITE_URL}/productos`, {
         method: "POST",
-        body: JSON.stringify(inventory),
+        body: JSON.stringify(product),
         headers: {
           "Content-Type": "application/json",
         },
       });
     }
 
-    // console.log(data);
     navigate("/dashboard");
   };
 
   const handleChange = (e) => {
-    setInventory({ ...inventory, [e.target.name]: e.target.value });
+    setProduct({ ...product, [e.target.name]: e.target.value });
   };
 
-  //para traer una tarea al edit
-  const loadTask = async (id) => {
-    const res = await fetch(`http://localhost:8001/productos/${id}`);
+  const loadProduct = async (id) => {
+    const res = await fetch(`${import.meta.env.VITE_URL}/productos/${id}`);
     const data = await res.json();
-    //  console.log(data)
-    setInventory({
+    setProduct({
       name: data.name,
       model: data.model,
       img: data.img,
@@ -81,18 +73,14 @@ const FormZapatero = () => {
       price: data.price,
       category: data.category,
       outstanding: data.outstanding,
-      sku:data.sku
-      
+      sku: data.sku,
     });
     setEditing(true);
   };
 
-  //ESTE SE USE EFFECT SE OCUPA PARA EDITAR
   useEffect(() => {
-    // console.log(params);
     if (params.id) {
-      // console.log('fech task')
-      loadTask(params.id);
+      loadProduct(params.id);
     }
   }, [params.id]);
 
@@ -107,10 +95,7 @@ const FormZapatero = () => {
            
           />
           </div>
-          {/* <Title
-            h1={editing ? "Editar Inventario " : " Inventario nuevo "}
-            className="  mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          /> */}
+          
           <div className=" grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <Title
@@ -118,15 +103,16 @@ const FormZapatero = () => {
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               />
               <Input
-                type="text"
-                name="name"
-                id="name"
-                value={inventory.name}
-                onChange={handleChange}
-                required
-                autoComplete="off"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-              />
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={product.name}
+                  onChange={handleChange}
+                  required
+                  autoComplete="off"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                />
+              
             </div>
             <div>
               <Title
@@ -137,7 +123,7 @@ const FormZapatero = () => {
                 type="text"
                 name="model"
                 id="model"
-                value={inventory.model}
+                value={product.model}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -153,7 +139,7 @@ const FormZapatero = () => {
                 type="number"
                 name="sku"
                 id="sku"
-                value={inventory.sku}
+                value={product.sku}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -169,7 +155,7 @@ const FormZapatero = () => {
                 type="text"
                 name="img"
                 id="img"
-                value={inventory.img}
+                value={product.img}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -185,7 +171,7 @@ const FormZapatero = () => {
                 type="text"
                 name="img1"
                 id="img1"
-                value={inventory.img1}
+                value={product.img1}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -201,7 +187,7 @@ const FormZapatero = () => {
                 type="text"
                 name="img2"
                 id="img2"
-                value={inventory.img2}
+                value={product.img2}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -217,7 +203,7 @@ const FormZapatero = () => {
                 type="text"
                 name="img3"
                 id="img3"
-                value={inventory.img3}
+                value={product.img3}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -233,7 +219,7 @@ const FormZapatero = () => {
                 type="text"
                 name="description"
                 id="description"
-                value={inventory.description}
+                value={product.description}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -249,7 +235,7 @@ const FormZapatero = () => {
                 type="number"
                 name="price"
                 id="price"
-                value={inventory.price}
+                value={product.price}
                 onChange={handleChange}
                 required
                 autoComplete="off"
@@ -262,7 +248,7 @@ const FormZapatero = () => {
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               />
               <select
-                value={inventory.category}
+                value={product.category}
                 onChange={handleChange}
                 name="category"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -280,7 +266,7 @@ const FormZapatero = () => {
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               />
               <select
-                value={inventory.outstanding}
+                value={product.outstanding}
                 onChange={handleChange}
                 name="outstanding"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -297,17 +283,17 @@ const FormZapatero = () => {
               type="submit"
               textButton="Guardar"
               disabled={
-                !inventory.name ||
-                !inventory.sku ||
-                !inventory.img ||
-                !inventory.img1 ||
-                !inventory.img2 ||
-                !inventory.img3 ||
-                !inventory.description ||
-                !inventory.price ||
-                !inventory.category ||
-                !inventory.outstanding||
-                !inventory.model
+                !product.name ||
+                !product.sku ||
+                !product.img ||
+                !product.img1 ||
+                !product.img2 ||
+                !product.img3 ||
+                !product.description ||
+                !product.price ||
+                !product.category ||
+                !product.outstanding||
+                !product.model
               }
               className=" w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             />
